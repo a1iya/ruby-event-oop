@@ -32,7 +32,8 @@ class Event
     end   	
 
     def is_soon
-    	if Time.now - @start_date > (30 * 60)
+    	time_soon = @start_date - (30 * 60)
+			if time_soon > @start_date
     		return "L'événement commence bientôt"
     	else return "L'événement est déjà commencé"
     	end	
@@ -43,4 +44,4 @@ class Event
 end	
 binding.pry
 #puts start_date
-p event
+puts is_soon
